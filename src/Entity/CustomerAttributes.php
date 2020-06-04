@@ -20,7 +20,7 @@ class CustomerAttributes
     /**
      * @ORM\Column(type="text")
      */
-    private string $value;
+    private $value = null;
 
     /**
      * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="attributes")
@@ -32,6 +32,12 @@ class CustomerAttributes
      */
     private Attribute $attribute;
 
+    public function __toString()
+    {
+        return (string) $this->value;
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -42,9 +48,13 @@ class CustomerAttributes
         return $this->value;
     }
 
-    public function setValue(string $value): self
+    public function setValue($value): self
     {
-        $this->value = $value;
+        if($value instanceof \DateTimeInterface) {
+            $value = $value->getTimestamp();
+        }
+
+        $this->value = (string) $value;
 
         return $this;
     }

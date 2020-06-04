@@ -19,14 +19,19 @@ class AttributesFixtures extends Fixture
             [
                 'name' => 'birthday',
                 'type' => 'date',
+                'options' => ['years' => range((new \DateTime('-100 years'))->format('Y'), (new \DateTime())->format('Y'))],
             ],
             [
-                'name' => 'email',
+                'name' => 'address',
                 'type' => 'string',
+            ],
+            [
+                'name' => 'client',
+                'type' => 'boolean',
             ],
             [
                 'name' => 'gender',
-                'type' => 'string',
+                'type' => 'choice',
                 'options' => ['choices' => ['male' => 'Male', 'female' => 'Female']],
             ],
         ];

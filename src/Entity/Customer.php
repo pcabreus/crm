@@ -35,7 +35,7 @@ class Customer
     private ?string $phone = null;
 
     /**
-     * @ORM\OneToMany(targetEntity=CustomerAttributes::class, mappedBy="customer")
+     * @ORM\OneToMany(targetEntity=CustomerAttributes::class, mappedBy="customer", cascade={"persist", "remove"})
      */
     private iterable $attributes;
 

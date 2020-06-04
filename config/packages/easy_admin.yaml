@@ -4,5 +4,11 @@ easy_admin:
         Customer:
             class: App\Entity\Customer
             controller: App\Controller\Admin\CustomerController
+            form:
+                fields:
+                    - name
+                    - email
+                    - phone
+                    - { property: 'attributes', type: 'collection', type_options: {entry_type: 'App\Form\CustomerAttributeType', allow_delete: false, allow_add: false}}
         Attribute:
             class: App\Entity\Attribute

@@ -16,6 +16,7 @@ class Attribute
     const NUMBER = 'number';
     const DATE = 'date';
     const BOOLEAN = 'boolean';
+    const CHOICE = 'choice';
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -51,6 +52,11 @@ class Attribute
     public function __construct()
     {
         $this->customers = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 
     public function getId(): ?int
