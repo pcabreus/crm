@@ -1,0 +1,21 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block wrapper_wrapper %}
+    <div class="wrapper">
+        <header class="main-header">
+            <div>
+                <h1>Wellcome to the CRM </h1>
+                <h2>Customer Relationship Management for your Enterprise</h2>
+                <p>You can find a simple CRM to start to manage customer on cloud</p>
+            </div>
+        </header>
+        <main class="content-wrapper">
+            <div class="content">
+                <div class="alert-warning">
+                    You are not authenticated, please <a href="{{ path('app_login') }}">login</a> to get access to the
+                    system.
+                </div>
+            </div>
+        </main>
+    </div>
+{% endblock %}
