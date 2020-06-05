@@ -12,3 +12,5 @@ easy_admin:
                     - { property: 'attributes', type: 'collection', type_options: {entry_type: 'App\Form\CustomerAttributeType', allow_delete: false, allow_add: false}}
         Attribute:
             class: App\Entity\Attribute
+        User:
+            class: App\Entity\User
